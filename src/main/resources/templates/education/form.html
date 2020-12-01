@@ -42,18 +42,19 @@
         </ul>
     </div>
 </nav>
-</header>
 <main role="main" class="container">
-    <br><br><br>
+    <br>
+    <br>
+    <br>
     <ul class="nav nav-tabs">
         <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#a1">유아</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" th:href="@{/education/elementary}">초등</a>
+            <a class="nav-link" data-toggle="tab" href="#a2">초등</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" th:href="@{/education/middle}">중등</a>
+            <a class="nav-link" data-toggle="tab" href="#a3">중등</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#a4">고등</a>
@@ -67,10 +68,58 @@
     </ul>
     <div class="tab-content">
         <div class="tab-pane fade show active" id="a1">
+            <p>유아 데이터</p>
+            <div class="container">
+                <form action="#" th:action="@{/education/form}" th:object="${element}" method="post">
+                    <input type="hidden" th:field="*{id}">
+                    <div class="form-group">
+                        <label for="region">지역</label>
+                        <input type="text" class="form-control" id="region" th:field="*{region}">
+                    </div>
+                    <div class="form-group">
+                        <label for="orz">학교명</label>
+                        <input type="text" class="form-control" id="orz" th:field="*{orz}">
+                    </div>
+                    <div class="form-group">
+                        <label for="work">사업명</label>
+                        <input type="text" class="form-control" id="work" th:field="*{work}">
+                    </div>
+                    <div class="form-group">
+                        <label for="class_num">기관별 총 학급수</label>
+                        <input type="number" class="form-control" id="class_num" th:field="*{class_num}">
+                    </div>
+                    <div class="form-group">
+                        <label for="student">기관별 총 학생수</label>
+                        <input type="number" class="form-control" id="student" th:field="*{student}">
+                    </div>
+                    <div class="form-group">
+                        <label for="edu_hour">기관별 총 교육시간</label>
+                        <input type="number" class="form-control" id="edu_hour" th:field="*{edu_hour}">
+                    </div>
+                    <div class="form-group">
+                        <label for="volunteer">기관별 총 봉사자수</label>
+                        <input type="number" class="form-control" id="volunteer" th:field="*{volunteer}">
+                    </div>
+                    <div class="form-group">
+                        <label for="semester">진행학기</label>
+                        <input type="number" class="form-control" id="semester" th:field="*{semester}">
+                    </div>
+                    <div class="form-group">
+                        <label for="inout2">안밖</label>
+                        <input type="text" class="form-control" id="inout2" th:field="*{inout2}">
+                    </div>
+                    <div class="text-right">
+                        <a type="button" class="btn btn-primary" th:href="@{/education/elementary}">취소</a>
+                        <button type="submit" class="btn btn-primary">확인</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="tab-pane fade" >
+        <div class="tab-pane fade" id="a2">
+            <p>초등 데이터</p>
         </div>
-        <div class="tab-pane fade">
+        <div class="tab-pane fade" id="a3">
+            <p>Curabitur dignissim quis nunc vitae laoreet. Etiam ut mattis leo, vel fermentum tellus. Sed sagittis rhoncus venenatis. Quisque commodo consectetur faucibus. Aenean eget ultricies justo.</p>
         </div>
         <div class="tab-pane fade" id="a4">
             <p>Curabitur dignissim quis nunc vitae laoreet. Etiam ut mattis leo, vel fermentum tellus. Sed sagittis rhoncus venenatis. Quisque commodo consectetur faucibus. Aenean eget ultricies justo.</p>

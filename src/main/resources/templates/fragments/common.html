@@ -38,8 +38,8 @@
             <li class="nav-item" th:classappend="${menu} == 'payment'? 'active'">
                 <a class="nav-link" href="#" th:href="@{/payment/payment_list}">선수금<span class="sr-only" th:if="${menu} == 'payment'">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">교육실적 관리</a>
+            <li class="nav-item" th:classappend="${menu} == 'education'?'education'">
+                <a class="nav-link" href="#" th:href="@{/education/education}">교육실적 관리<span class="sr-only" th:if="${menu} == 'education'">(current)</span></a>
             </li>
         </ul>
 
@@ -49,11 +49,10 @@
         sec:authorize="!isAuthenticated()">Sign up</a>
 
         <form class="form-inline mt-2 mt-md-0" th:action="@{/logout}" method="POST" sec:authorize="isAuthenticated()">
-            <span class="text-white" sec:authentication="name">사용자</span>
-            <span class="text-white mx-2" sec:authentication="principal.authorities">권한</span>
+            <span class="text-white" sec:authentication="name">사용자 </span>
+            <!--<span class="text-white mx-2" sec:authentication="principal.authorities">권한</span>-->
             <button type="submit" class="btn btn-outline-light" >Logout</button>
         </form>
-
       </div>
     </nav>
 </header>
