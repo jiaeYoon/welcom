@@ -1,7 +1,7 @@
 <!doctype html>
 
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/common :: head('차량관리')">
+<head th:replace="fragments/common :: head('JA KOREA')">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,13 +12,33 @@
 
     <title th:text="${title}"></title>
 </head>
-
 <body>
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" th:replace="fragments/common :: menu('vehicle')">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" th:replace="fragments/common :: menu('home')">
     <a class="navbar-brand" href="#">JA Korea</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+    <!-- <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">회의실 예약</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">차량관리</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">교재재고 관리</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">선수금</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">교육실적 관리</a>
+        </li>
+    </div> -->
 </nav>
 </header>
 
@@ -26,23 +46,9 @@
 <main role="main" class="flex-shrink-0">
     <div class="container">
         <br>
-        <h1 class="mt-5">차량관리대장</h1>
-    <form action="#" th:action="@{/vehicle/form}" th:object="${vehicle}" method="post">
-        <input type="hidden" th:field="*{id}">
-        <div class="form-group">
-            <label for="name">이름</label>
-            <input type="text" class="form-control" id="name" th:field="*{name}">
-        </div>
-        <div class="form-group">
-            <label for="driver">운전자</label>
-            <input type="text" class="form-control" id="driver" th:field="*{driver}">
-        </div>
-        <div class="text-right">
-            <a type="button" class="btn btn-dark" th:href="@{/vehicle/vehicle_list}">취소</a>
-            <button type="submit" class="btn btn-dark">작성</button>
-        </div>
-    </form>
-
+        <h1 class="mt-5">JA Koera 사내 관리 사이트</h1>
+        <p class="lead">회의실예약, 차량관리, 교재재고, 선수금, 교육실적을 한번에 관리</code>.</p>
+        <!-- <p>Back to <a href="/docs/4.5/examples/sticky-footer/">the default sticky footer</a> minus the navbar.</p> -->
     </div>
 </main>
 
